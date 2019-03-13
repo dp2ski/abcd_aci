@@ -9,7 +9,8 @@ From: dcanlabs/abcd-hcp-pipeline:latest
 %environment
 
 %post
-    apt-get install -y gawk
+    apt-get install devscripts build-essential
+    apt-get build-dep gawk
     apt-get install -y bison
 
     #configure glibc to work with the older kernel
