@@ -9,6 +9,7 @@ From: dcanlabs/abcd-hcp-pipeline:latest
 %environment
 
 %post
+    apt-get update
     apt-get install devscripts build-essential
     apt-get build-dep gawk
     apt-get install -y bison
