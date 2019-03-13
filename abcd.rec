@@ -9,11 +9,14 @@ From: dcanlabs/abcd-hcp-pipeline:latest
 %environment
 
 %post
+    apt-get install -y gawk
+    apt-get install -y bison
+
     #configure glibc to work with the older kernel
     cd /usr/lib/
     git clone git://sourceware.org/git/glibc.git
     cd glibc
-    #git checkout release/2.29/master
+    git checkout release/2.29/master
     mkdir build
     cd build
     ../configure --enable-kernel=2.6 --prefix=/usr
