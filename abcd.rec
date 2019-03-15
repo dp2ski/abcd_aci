@@ -10,6 +10,7 @@ From: dcanlabs/abcd-hcp-pipeline:latest
     LD_LIBRARY_PATH=/opt/glibc/:$LD_LIBRARY_PATH
 
 %post
+    apt-get update 
     apt-get install -y -f bison
     apt-get install -y -f gawk
 
