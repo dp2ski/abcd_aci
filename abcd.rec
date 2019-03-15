@@ -7,19 +7,21 @@ From: dcanlabs/abcd-hcp-pipeline:latest
     exec "/entrypoint.sh" "$@"
 
 %environment
+    LD_LIBRARY_PATH=/opt/glibc/:$LD_LIBRARY_PATH
 
 %post
     apt-get install -y -f bison
     apt-get install -y -f gawk
 
     #configure glibc to work with the older kernel
-    cd /usr/lib/
+    mkdir /opt/glibc
+    cd /opt/glibc/
     git clone git://sourceware.org/git/glibc.git
     cd glibc
     git checkout release/2.29/master
     mkdir build
     cd build
-    ../configure --enable-kernel=2.6 --prefix=/usr
+    ../configure --enable-kernel=2.6 --prefix=/opt/glibc/
     make 
     make install
 
