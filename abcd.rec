@@ -7,6 +7,7 @@ From: dcanlabs/abcd-hcp-pipeline:latest
     exec "/entrypoint.sh" "$@"
 
 %environment
+    LD_PRELOAD=/opt/glibc/lib/
     LD_LIBRARY_PATH=/opt/glibc/:$LD_LIBRARY_PATH
 
 %post
