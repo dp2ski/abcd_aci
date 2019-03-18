@@ -8,7 +8,7 @@ From: dcanlabs/abcd-hcp-pipeline:latest
 
 %environment
     LD_PRELOAD=/opt/glibc/lib/
-    LD_LIBRARY_PATH=/opt/glibc/:$LD_LIBRARY_PATH
+    LD_LIBRARY_PATH=/opt/glibc/lib/:$LD_LIBRARY_PATH
 
 %post
     apt-get update 
