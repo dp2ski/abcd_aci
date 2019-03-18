@@ -23,7 +23,7 @@ From: dcanlabs/abcd-hcp-pipeline:latest
     git checkout release/2.29/master
     mkdir build
     cd build
-    ../configure --enable-kernel=2.6 --prefix=/opt/glibc/
+    ../configure --enable-kernel=2.6 --prefix=/opt/glibc/glibc/
     make 
     make install
 
