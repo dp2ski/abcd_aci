@@ -6,7 +6,7 @@ From: dp2ski/abcd_ubuntu16:latest
 
 %runscript
     #calling the script directly is causing some problems from the windows ^M charecters
-    exec "bash /entrypoint.sh" "$@"
+    exec "/bin/bash /entrypoint.sh" "$@"
 
 %environment
 
