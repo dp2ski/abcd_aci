@@ -5,13 +5,13 @@ BootStrap: docker
 From: dp2ski/abcd_ubuntu16:latest
 
 %runscript
+    exec /bin/bash /entrypoint.sh "$@"
     #calling the script directly is causing some problems from the windows ^M charecters
-    exec "/bin/bash /entrypoint.sh" "$@"
 
 %environment
 
 %post
-
+    
     #------------------------------------------------------------------------------
     # Create local binding points for our ICS-ACI
     #------------------------------------------------------------------------------
