@@ -2,7 +2,8 @@
 # docker image converted to ubuntu 16 to work with aci systems
 
 BootStrap: docker
-From: dp2ski/abcd_ubuntu16:latest
+From: dp2ski/abcd_ubuntu16:0.0.1
+#DCAN lab pushed a hotfix in 0.0.1 for running with singularity
 
 %runscript
     exec /bin/bash /entrypoint.sh "$@"
