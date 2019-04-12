@@ -6,8 +6,9 @@ From: dp2ski/abcd_ubuntu16:0.0.1
 #DCAN lab pushed a hotfix in 0.0.1 for running with singularity
 
 %runscript
-    exec /bin/bash /entrypoint.sh "$@"
-    #calling the script directly is causing some problems from the windows ^M charecters
+    exec source /app/SetypEnv.sh
+    exec cd /tmp
+    exec python3 /app/run.py "$@"
 
 %environment
 
