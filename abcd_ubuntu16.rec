@@ -11,9 +11,12 @@ From: dp2ski/abcd_ubuntu16:0.0.1
     exec python3 /app/run.py "$@"
 
 %environment
+    export FS_LICENSE=/gpfs/group/cfg2/default/sw/abcd/license.txt
+
+%files
+license.txt /opt/freesurfer/
 
 %post
-    
     #------------------------------------------------------------------------------
     # Create local binding points for our ICS-ACI
     #------------------------------------------------------------------------------
